@@ -13,4 +13,4 @@ on the command line (terminal or CMD) into the project directory and input : pyt
 #download template(data.csv) file,generate your data like template file. and upload the data file .
 it is very simple.
 
-![png](Annotation 2019-06-01 195100.jpg)
+![jpg](Annotation 2019-06-01 195100.jpg)
