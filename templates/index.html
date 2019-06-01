@@ -1,0 +1,110 @@
+
+<!doctype html>
+<html>
+<head>
+  <title> MicroOrganismExplorer </title>
+
+    
+    
+
+    
+    
+      <!-- 加载jquery库，必须在bootstrap.js之前 -->
+  <script type="text/javascript" src= "/static/js/jquery-3.1.0.min.js"></script>
+  <!-- 加载bootstrap的js库 -->
+  <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    
+ <script type="text/javascript" src="/static/js/d3/d3.js"></script>
+
+  <script type="text/javascript" src="/static/js/d3/d3.layout.cloud.js"></script>
+
+    
+ 
+    
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+    
+  <script type="text/javascript" src="/static/js/mcharts/force.js"></script> 
+
+  <script type="text/javascript" src="/static/js/scs.js"></script> 
+    
+    
+    
+<style>
+.nodetextC {
+	font-size: 8px ;
+	font-family: SimSun;
+	fill:#aaa;
+    fill-opacity:0.2;
+}
+.nodetext {
+	font-size: 10px ;
+	font-family: SimSun;
+	fill:#60ffffff;
+}
+
+.linetext {
+	font-size: 10px ;
+	font-family: SimSun;
+	fill:#11ffFF;
+	fill-opacity:0.0;
+}
+
+</style>
+
+
+</head>
+<body style="background-color:#182e3d">
+
+<div style="height:100%" class="id">
+  <div style="height:5%;">
+<nav class="navbar navbar-inverse navbar-fixed-top"> 
+	<div class="container"> 
+		<div id="navbar" class="navbar-collapse collapse"> 
+        
+        <form class="navbar-form navbar-left" action="\submit" method="post" enctype="multipart/form-data">
+          {% csrf_token %}     
+          <input class="form-control"  type="file" name="fileUpload" />
+          <input class="btn btn-default" type="submit" value="fileUpload" />
+          <a href="{% url 'download' %}" style="font-size:18px;color:blue;">下载模板</a>
+            </form>
+          
+			<form class="navbar-form navbar-right" role="search" autocomplete="off" onkeydown="if(event.keyCode==13) return false;"> 
+				<div class="form-group"> 
+					<input id="searchbox" type="text" class="form-control" organization="" />
+				</div>
+				<button id="btn-submit" type="button" class="btn btn-default" onclick="OnMyClick()">GO</button> 
+			</form> 
+			<ul class="nav navbar-nav navbar-right"> 
+				<li style="font-size:11px;"><a target="_blank" href="#"><strong>About</strong></a></li>
+				<li style="font-size:11px;"><a target="_blank" href="http://kazgu.github.io">KAZGU <!-- <img src="images/"> --></a></li> 
+			</ul> 
+		</div>
+	</div> 
+</nav>
+  </div>
+  
+  
+
+</div>
+	<div id = "center-area">
+
+	
+		<div id = "force">
+      
+        </div>
+</body>
+</html>
+
+<script>
+    //initload('');
+    search_entity('');
+    function OnMyClick()
+    {
+        searchkey=document.getElementById("searchbox").value;
+        //alert(Etypeval);
+     
+        search_entity(searchkey)
+    }
+</script>
