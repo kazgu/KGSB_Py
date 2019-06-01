@@ -14,4 +14,4 @@ on the command line (terminal or CMD) into the project directory and input : pyt
 it is very simple.
 
 
-![Image text](https://raw.github.com/kazgu/repositpry/master/KGSB/Annotation 2019-06-01 195100.jpg)
+![Image text](https://raw.github.com/kazgu/repository/master/KGSB/display.jpg)
